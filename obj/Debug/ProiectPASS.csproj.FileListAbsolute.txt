@@ -1,0 +1,10 @@
+D:\Facultate\ProiectPASS\ProiectPASS\bin\Debug\ProiectPASS.exe.config
+D:\Facultate\ProiectPASS\ProiectPASS\bin\Debug\ProiectPASS.exe
+D:\Facultate\ProiectPASS\ProiectPASS\bin\Debug\ProiectPASS.pdb
+D:\Facultate\ProiectPASS\ProiectPASS\obj\Debug\ProiectPASS.csproj.AssemblyReference.cache
+D:\Facultate\ProiectPASS\ProiectPASS\obj\Debug\ProiectPASS.Properties.Resources.resources
+D:\Facultate\ProiectPASS\ProiectPASS\obj\Debug\ProiectPASS.csproj.GenerateResource.cache
+D:\Facultate\ProiectPASS\ProiectPASS\obj\Debug\ProiectPASS.csproj.CoreCompileInputs.cache
+D:\Facultate\ProiectPASS\ProiectPASS\obj\Debug\ProiectPASS.exe
+D:\Facultate\ProiectPASS\ProiectPASS\obj\Debug\ProiectPASS.pdb
+D:\Facultate\ProiectPASS\ProiectPASS\obj\Debug\ProiectPASS.MainForm.resources
