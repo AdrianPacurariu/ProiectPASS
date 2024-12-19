@@ -8,8 +8,26 @@ namespace ProiectPASS.Models.Classes
 {
     public class Student
     {
-        public string numarMatricol { get; set; }
-        public string nume { get; set; }
-        public double medie { get; set; }
+        private string numarMatricol;
+        private string nume;
+        private double medie;
+
+        public string NumarMatricol
+        {
+            get { return numarMatricol; }
+            set { numarMatricol = value; }
+        }
+
+        public string Nume
+        {
+            get { return nume; } 
+            set { nume = value; }  
+        }
+
+        public double Medie
+        {
+            get { return medie; } 
+            set { medie = value; }
+        }
     }
 }

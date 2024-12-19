@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ProiectPASS.Models.Classes
 {
@@ -16,34 +17,32 @@ namespace ProiectPASS.Models.Classes
             filePath = path;
         }
 
-       public List<Student> getStudents()
+        public List<Student> getStudents()
         {
             List<Student> students = new List<Student>();
             var xmlDocument = new System.Xml.XmlDocument();
             xmlDocument.Load(filePath);
 
-            foreach (System.Xml.XmlNode studentNode in xmlDocument.SelectNodes("/StudentTable/Student"))
+            try
             {
-                Student student = new Student
+                foreach (System.Xml.XmlNode studentNode in xmlDocument.SelectNodes("/StudentTable/Student"))
                 {
-                    numarMatricol = studentNode["NumarMatricol"]?.InnerText,
-                    nume = studentNode["Nume"]?.InnerText,
-                    medie = double.Parse(studentNode["Medie"]?.InnerText ?? "0")
-                };
-                students.Add(student);
+                    Student student = new Student
+                    {
+                        NumarMatricol = studentNode["NumarMatricol"]?.InnerText,
+                        Nume = studentNode["Nume"]?.InnerText,
+                        Medie = double.Parse(studentNode["Medie"]?.InnerText ?? "0")
+                    };
+                    students.Add(student);
+                }
             }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
             return students;
         }
-        public void addStudent(Student student)
-        {
-            throw new NotImplementedException();
-        }
-
-        public Student getStudentByMedie(double medie)
-        {
-            throw new NotImplementedException();
-        }
-
         public Student getStudentByNrMatricol(string numarMatricol)
         {
             throw new NotImplementedException();

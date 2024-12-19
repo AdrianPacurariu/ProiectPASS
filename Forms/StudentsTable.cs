@@ -20,6 +20,7 @@ namespace ProiectPASS.Forms
             DataGridView dataGridViewStudents = new DataGridView
             {
                 Dock = DockStyle.Fill,
+                AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill,
                 AutoGenerateColumns = true 
             };
 

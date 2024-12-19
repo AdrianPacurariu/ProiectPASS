@@ -30,6 +30,9 @@ namespace ProiectPASS
             btnIncarcareXML.Enabled = true;
             btnIncarcareBD.Enabled = true;
             btnAfisareTabel.Enabled = false;
+            btnPreziceMedia.Enabled = false;
+            btnPreziceMedieScazuta.Enabled = false;
+            btnZiBuna.Enabled = false;
         }
 
         private void grpBoxIncarcare_Paint(object sender, PaintEventArgs e)
@@ -83,6 +86,9 @@ namespace ProiectPASS
                 btnIncarcareXML.Enabled = false;
                 btnIncarcareBD.Enabled = false;
                 btnAfisareTabel.Enabled = true;
+                btnPreziceMedia.Enabled = true;
+                btnPreziceMedieScazuta.Enabled = true;
+                btnZiBuna.Enabled = true;
             }
             catch (Exception ex)
             {
@@ -91,9 +97,29 @@ namespace ProiectPASS
         }
         private void btnIncarcareBD_Click(object sender, EventArgs e)
         {
-            btnIncarcareXML.Enabled = false;
-            btnIncarcareBD.Enabled = false;
-            btnAfisareTabel.Enabled = true;
+            try
+            {
+                DBStudent studentsFromDB = new DBStudent();
+
+                List<Student> students = studentsFromDB.getStudents();
+
+                loadedStudents = students;
+
+                StudentsTable studentsTableForm = new StudentsTable(loadedStudents);
+
+                MessageBox.Show("Students have been loaded successfully from the database.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+                btnIncarcareXML.Enabled = false;
+                btnIncarcareBD.Enabled = false;
+                btnAfisareTabel.Enabled = true;
+                btnPreziceMedia.Enabled = true;
+                btnPreziceMedieScazuta.Enabled = true;
+                btnZiBuna.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Error occured: {ex.Message}", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }            
         }
 
         private void btnAfisareTabel_Click(object sender, EventArgs e)

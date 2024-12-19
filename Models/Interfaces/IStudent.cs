@@ -12,9 +12,5 @@ namespace ProiectPASS.Models.Interfaces
         List<Student> getStudents();
 
         Student getStudentByNrMatricol(string numarMatricol);
-
-        Student getStudentByMedie(double medie);
-
-        void addStudent(Student student);
     }
 }
