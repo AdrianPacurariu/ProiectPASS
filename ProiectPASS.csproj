@@ -46,16 +46,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="MainForm.cs">
+    <Compile Include="Forms\MainForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="MainForm.Designer.cs">
+    <Compile Include="Forms\MainForm.Designer.cs">
       <DependentUpon>MainForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\StudentsTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\StudentsTable.Designer.cs">
+      <DependentUpon>StudentsTable.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Classes\DBStudent.cs" />
+    <Compile Include="Models\Classes\Student.cs" />
+    <Compile Include="Models\Classes\XMLStudent.cs" />
+    <Compile Include="Models\Interfaces\IStudent.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="MainForm.resx">
+    <EmbeddedResource Include="Forms\MainForm.resx">
       <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\StudentsTable.resx">
+      <DependentUpon>StudentsTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -100,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\NumberThree.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Files\Students.xml" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

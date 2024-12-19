@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<StudentTable>
+	<Student>
+		<NumarMatricol>101</NumarMatricol>
+		<Nume>Andrei Popescu</Nume>
+		<Medie>8.5</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>102</NumarMatricol>
+		<Nume>Maria Ionescu</Nume>
+		<Medie>9.2</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>103</NumarMatricol>
+		<Nume>George Marin</Nume>
+		<Medie>7.8</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>104</NumarMatricol>
+		<Nume>Ioana Dumitrescu</Nume>
+		<Medie>8.3</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>105</NumarMatricol>
+		<Nume>Alexandru Dinu</Nume>
+		<Medie>9.1</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>106</NumarMatricol>
+		<Nume>Simona Vasile</Nume>
+		<Medie>7.5</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>107</NumarMatricol>
+		<Nume>Vlad Radu</Nume>
+		<Medie>8.9</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>108</NumarMatricol>
+		<Nume>Elena Gheorghe</Nume>
+		<Medie>9.4</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>109</NumarMatricol>
+		<Nume>Robert Iliescu</Nume>
+		<Medie>6.8</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>110</NumarMatricol>
+		<Nume>Gabriela Stan</Nume>
+		<Medie>7.9</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>111</NumarMatricol>
+		<Nume>Roxana Ciobanu</Nume>
+		<Medie>8.6</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>112</NumarMatricol>
+		<Nume>Florin Neagu</Nume>
+		<Medie>8.2</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>113</NumarMatricol>
+		<Nume>Adina Dragomir</Nume>
+		<Medie>7.3</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>114</NumarMatricol>
+		<Nume>Ion Stoica</Nume>
+		<Medie>9.0</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>115</NumarMatricol>
+		<Nume>Marius Costache</Nume>
+		<Medie>6.7</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>116</NumarMatricol>
+		<Nume>Ana Mihai</Nume>
+		<Medie>8.7</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>117</NumarMatricol>
+		<Nume>Daniel Serban</Nume>
+		<Medie>7.6</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>118</NumarMatricol>
+		<Nume>Larisa Petrescu</Nume>
+		<Medie>9.3</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>119</NumarMatricol>
+		<Nume>Diana Cristea</Nume>
+		<Medie>8.4</Medie>
+	</Student>
+	<Student>
+		<NumarMatricol>120</NumarMatricol>
+		<Nume>Victor Barbu</Nume>
+		<Medie>7.1</Medie>
+	</Student>
+</StudentTable>
