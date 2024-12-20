@@ -1,12 +1,14 @@
 ﻿using MySql.Data.MySqlClient;
 using ProiectPASS.Models.Interfaces;
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static Org.BouncyCastle.Crypto.Engines.SM2Engine;
 
 namespace ProiectPASS.Models.Classes
 {
@@ -52,7 +54,29 @@ namespace ProiectPASS.Models.Classes
 
         public Student getStudentByNrMatricol(string numarMatricol)
         {
-            throw new NotImplementedException();
+            string query = "SELECT numarMatricol, nume FROM student.students WHERE numarMatricol = @numarMatricol";
+
+            using (MySqlConnection connection = new MySqlConnection(connectionString))
+            {
+                connection.Open();
+                using (var command = new MySqlCommand(query, connection))
+                {
+                    command.Parameters.AddWithValue("@numarMatricol", numarMatricol);
+
+                    using (var reader = command.ExecuteReader())
+                    {
+                        if (reader.Read())
+                        {
+                            return new Student
+                            {
+                                NumarMatricol = reader["numarMatricol"].ToString(),
+                                Nume = reader["nume"].ToString(),
+                            };
+                        }
+                    }
+                }
+            }
+            return null;
         }
     }
 }

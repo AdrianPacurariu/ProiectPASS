@@ -7,7 +7,7 @@ using ProiectPASS.Models.Classes;
 
 namespace ProiectPASS.Models.Interfaces
 {
-    internal interface IStudent
+    public interface IStudent
     {
         List<Student> getStudents();
 

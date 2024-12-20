@@ -45,7 +45,9 @@ namespace ProiectPASS.Models.Classes
         }
         public Student getStudentByNrMatricol(string numarMatricol)
         {
-            throw new NotImplementedException();
+            List<Student> students = getStudents();
+
+            return students.FirstOrDefault(student => student.NumarMatricol == numarMatricol);
         }     
     }    
 }

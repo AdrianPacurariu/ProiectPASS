@@ -42,3 +42,4 @@ D:\Facultate\ProiectPASS\ProiectPASS\bin\Debug\System.Numerics.Vectors.xml
 D:\Facultate\ProiectPASS\ProiectPASS\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
 D:\Facultate\ProiectPASS\ProiectPASS\bin\Debug\System.Threading.Tasks.Extensions.xml
 D:\Facultate\ProiectPASS\ProiectPASS\obj\Debug\ProiectPASS.csproj.CopyComplete
+D:\Facultate\ProiectPASS\ProiectPASS\obj\Debug\ProiectPASS.Forms.GoodDayForm.resources

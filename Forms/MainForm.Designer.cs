@@ -142,6 +142,7 @@
             this.btnZiBuna.Text = "Vei avea o zi buna?";
             this.btnZiBuna.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnZiBuna.UseVisualStyleBackColor = false;
+            this.btnZiBuna.Click += new System.EventHandler(this.btnZiBuna_Click);
             // 
             // btnPreziceMedieScazuta
             // 

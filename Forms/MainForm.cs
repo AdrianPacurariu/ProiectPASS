@@ -1,5 +1,6 @@
 ﻿using ProiectPASS.Forms;
 using ProiectPASS.Models.Classes;
+using ProiectPASS.Models.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,7 +16,7 @@ namespace ProiectPASS
 {
     public partial class MainForm : Form
     {
-
+        private IStudent studentService;
         private List<Student> loadedStudents;
 
         public MainForm()
@@ -73,22 +74,16 @@ namespace ProiectPASS
             try
             {
                 string filePath = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "..", "..", "Files", "Students.xml");
-                XMLStudent studentsFromXML = new XMLStudent(filePath);
 
-                List<Student> students = studentsFromXML.getStudents();
+                studentService = new XMLStudent(filePath);
 
-                loadedStudents = students;
+                loadedStudents = studentService.getStudents();
 
                 StudentsTable studentsTableForm = new StudentsTable(loadedStudents);
 
                 MessageBox.Show("Students have been loaded successfully from the XML file.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                btnIncarcareXML.Enabled = false;
-                btnIncarcareBD.Enabled = false;
-                btnAfisareTabel.Enabled = true;
-                btnPreziceMedia.Enabled = true;
-                btnPreziceMedieScazuta.Enabled = true;
-                btnZiBuna.Enabled = true;
+                EnableButtons();
             }
             catch (Exception ex)
             {
@@ -99,22 +94,15 @@ namespace ProiectPASS
         {
             try
             {
-                DBStudent studentsFromDB = new DBStudent();
+                studentService = new DBStudent();
 
-                List<Student> students = studentsFromDB.getStudents();
-
-                loadedStudents = students;
+                loadedStudents = studentService.getStudents();
 
                 StudentsTable studentsTableForm = new StudentsTable(loadedStudents);
 
                 MessageBox.Show("Students have been loaded successfully from the database.", "Success", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
-                btnIncarcareXML.Enabled = false;
-                btnIncarcareBD.Enabled = false;
-                btnAfisareTabel.Enabled = true;
-                btnPreziceMedia.Enabled = true;
-                btnPreziceMedieScazuta.Enabled = true;
-                btnZiBuna.Enabled = true;
+                EnableButtons();
             }
             catch (Exception ex)
             {
@@ -124,7 +112,7 @@ namespace ProiectPASS
 
         private void btnAfisareTabel_Click(object sender, EventArgs e)
         {
-            if (loadedStudents == null || !loadedStudents.Any())
+            if (studentService == null)
             {
                 MessageBox.Show("No students have been loaded yet. Please initialize first.", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -132,6 +120,22 @@ namespace ProiectPASS
 
             StudentsTable studentsTableForm = new StudentsTable(loadedStudents);
             studentsTableForm.ShowDialog();
+        }
+
+        private void btnZiBuna_Click(object sender, EventArgs e)
+        {
+            GoodDayForm goodDayForm = new GoodDayForm(studentService);
+            goodDayForm.ShowDialog();
+        }
+
+        private void EnableButtons()
+        {
+            btnIncarcareXML.Enabled = false;
+            btnIncarcareBD.Enabled = false;
+            btnAfisareTabel.Enabled = true;
+            btnPreziceMedia.Enabled = true;
+            btnPreziceMedieScazuta.Enabled = true;
+            btnZiBuna.Enabled = true;
         }
     }
 }
