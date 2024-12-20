@@ -49,6 +49,19 @@ namespace ProiectPASS.Models.Classes
 
             return students.FirstOrDefault(student => student.NumarMatricol == numarMatricol);
         }
+
+        public int ComputeMedie(Student student)
+        {
+            int numarMatricolSum = student.NumarMatricol
+                                          .Where(char.IsDigit)
+                                          .Sum(c => c - '0');
+
+            int numeSum = student.Nume
+                                 .Where(char.IsLetter)
+                                 .Sum(c => c);
+
+            return (numarMatricolSum + numeSum) % 2;
+        }
         
         public int GoodOrBadDay(Student student)
         {

@@ -122,10 +122,39 @@ namespace ProiectPASS
             studentsTableForm.ShowDialog();
         }
 
+        private void btnPreziceMedia_Click(object sender, EventArgs e)
+        {
+            GoodDayForm goodDayForm = new GoodDayForm(studentService, "WillYourAverageGrowOrDrop");
+            goodDayForm.ShowDialog();
+        }
+
+        private void btnPreziceMedieScazuta_Click(object sender, EventArgs e)
+        {
+            ComputeAverage();
+        }
+
         private void btnZiBuna_Click(object sender, EventArgs e)
         {
-            GoodDayForm goodDayForm = new GoodDayForm(studentService);
+            GoodDayForm goodDayForm = new GoodDayForm(studentService, "WillYouHaveAGoodOrBadDay");
             goodDayForm.ShowDialog();
+        }
+
+        private void ComputeAverage()
+        {
+            int sum = 0;
+            int k = 0;
+
+            foreach (Student student in loadedStudents)
+            {
+                if (student.Medie > 8)
+                {
+                    sum++;
+                    int result = studentService.ComputeMedie(student);
+                    if (result != 1) k++;
+                }
+            }
+
+            MessageBox.Show($"There are {sum} students which have their average > 8. Out of these, only {k} are unlucky to have their average drop.. :(", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void EnableButtons()

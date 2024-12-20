@@ -75,7 +75,6 @@
             this.MinimizeBox = false;
             this.Name = "GoodDayForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "WillYouHaveAGoodDay";
             this.ResumeLayout(false);
             this.PerformLayout();
 
