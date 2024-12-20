@@ -48,6 +48,17 @@ namespace ProiectPASS.Models.Classes
             List<Student> students = getStudents();
 
             return students.FirstOrDefault(student => student.NumarMatricol == numarMatricol);
-        }     
+        }
+        
+        public int GoodOrBadDay(Student student)
+        {
+            int day = DateTime.Now.Day;
+            char firstLetter = student.Nume[0];
+
+            int asciiFirstLetterValue = (int)firstLetter;
+            int result = (day + asciiFirstLetterValue) % 2;
+
+            return result;
+        }
     }    
 }

@@ -12,5 +12,7 @@ namespace ProiectPASS.Models.Interfaces
         List<Student> getStudents();
 
         Student getStudentByNrMatricol(string numarMatricol);
+
+        int GoodOrBadDay(Student student);
     }
 }

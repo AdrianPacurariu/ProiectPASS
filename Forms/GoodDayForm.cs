@@ -33,16 +33,11 @@ namespace ProiectPASS.Forms
                 return;
             }
 
-            string studentName = foundStudent.Nume;
-            int day = DateTime.Now.Day;
-            char firstLetter = studentName[0];
-
-            int asciiFirstLetterValue = (int)firstLetter;
-            int result = (day + asciiFirstLetterValue) % 2;
-
+            int result = studentService.GoodOrBadDay(foundStudent);
+          
             string prediction = result == 1 ? "... Good day! :)" : "... Bad day! :(";
 
-            MessageBox.Show($"For {studentName} today is a {prediction}", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            MessageBox.Show($"For {foundStudent.Nume} today is a {prediction}", "Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
